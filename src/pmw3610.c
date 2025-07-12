@@ -238,7 +238,7 @@ static int pmw3610_set_performance(const struct device *dev, bool enabled) {
         //   BIT 1-0: POSLO_RUN_RATE 0x0: 8ms; 0x1 4ms; 0x2 2ms; 0x4 Reserved
         uint8_t perf;
         if (config->force_awake_4ms_mode) {
-            perf = 0x0d; // RUN RATE @ 4ms
+            perf = 0x0E; // RUN RATE @ 2ms
         } else {
             // reset bit[3..0] to 0x0 (normal operation)
             perf = value & 0x0F; // RUN RATE @ 8ms
